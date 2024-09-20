@@ -1,13 +1,8 @@
 @import "./reset.css";
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     padding-top: 50px;
@@ -15,7 +10,6 @@ body {
 }
 
 .container {
-    width: 100%;
     max-width: 1200px;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -45,9 +39,6 @@ body {
 }
 
 .checkbox-info {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
     background-color: #f9f9f9;
     min-height: 200px;
     padding: 15px;
@@ -64,13 +55,6 @@ body {
 .checkbox-info__title {
     font-size: 18px;
     font-weight: bold;
-}
-
-.checkbox-info__ids {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    max-height: 320px;
 }
 
 .checkbox-info__ids li {
@@ -96,6 +80,7 @@ body {
     border-radius: 5px;
     margin-right: 5px;
 }
+
 .buttons button:hover {
     background-color: #51327f;
 }
