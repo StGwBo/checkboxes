@@ -12,9 +12,9 @@ body {
 .container {
     max-width: 1200px;
     padding: 20px;
+    border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: #ffffff;
-    border-radius: 8px;
 }
 
 .container-checkbox {
@@ -39,10 +39,10 @@ body {
 }
 
 .checkbox-info {
-    background-color: #f9f9f9;
     min-height: 200px;
     padding: 15px;
     border-radius: 8px;
+    background-color: #f9f9f9;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -60,9 +60,9 @@ body {
 .checkbox-info__ids li {
     width: 150px;
     padding: 5px 0;
+    cursor: pointer;
     border-bottom: 1px solid #ddd;
     color: #555;
-    cursor: pointer;
 }
 
 .buttons {
@@ -73,12 +73,12 @@ body {
     width: 150px;
     height: 50px;
     font-size: 16px;
-    background-color: #6940a5;
-    color: white;
     border: none;
     cursor: pointer;
     border-radius: 5px;
     margin-right: 5px;
+    background-color: #6940a5;
+    color: white;
 }
 
 .buttons button:hover {
