@@ -4,7 +4,7 @@ body {
     font-family: Arial;
     display: flex;
     justify-content: center;
-    padding-top: 50px;
+    padding: 50px;
     background-color: #f4f4f4;
 }
 
@@ -50,6 +50,7 @@ body {
     display: flex;
     width: 100%;
     justify-content: space-between;
+    margin-bottom: 10px;
 }
 
 .checkbox-info__title {
@@ -63,7 +64,8 @@ body {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    max-height: 320px;
+    max-height: 270px;
+    overflow-y: auto;
 }
 
 .checkbox-info__ids li {
