@@ -1,21 +1,14 @@
 @import "./reset.css";
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
     padding-top: 50px;
     background-color: #f4f4f4;
 }
 
 .container {
-    width: 100%;
     max-width: 1200px;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -24,12 +17,12 @@ body {
 }
 
 .container-checkbox {
+    display: flex;
     flex-wrap: wrap;
     margin-bottom: 20px;
 }
 
 .checkbox-wrapper {
-    display: inline-flex;
     width: 150px;
     align-items: center;
     margin: 5px;
