@@ -1,4 +1,4 @@
-const SELECTED_IDS = document.getElementById("selected-ids");
+const SELECTED_IDS = document.querySelector(".checkbox-info__ids");
 const CHECKBOX_LIST = document.getElementById("container-checkbox");
 const RESET_BUTTON = document.getElementById("reset-button");
 const COPY_URL_BUTTON = document.getElementById("copy-url-button");
