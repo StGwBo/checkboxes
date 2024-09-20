@@ -26,6 +26,14 @@ body {
 .container-checkbox {
     flex-wrap: wrap;
     margin-bottom: 20px;
+    height: 300px;
+}
+
+.container-checkbox ul {
+    background-color: #de0606;
+}
+
+.container-checkbox li {
 }
 
 .checkbox-wrapper {
