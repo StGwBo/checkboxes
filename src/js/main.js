@@ -9,11 +9,9 @@ import {
 export let selectedIds = [];
 
 const createCheckboxes = (count) => {
-    const ul = document.createElement("ul"); // Создаем ul для чекбоксов
-
     for (let i = 1; i <= count; i++) {
-        const li = document.createElement("li");
-        li.classList.add("checkbox-wrapper");
+        const div = document.createElement("div");
+        div.classList.add("checkbox-wrapper");
 
         const checkbox = document.createElement("input");
         checkbox.classList.add("checkbox-input");
@@ -26,11 +24,10 @@ const createCheckboxes = (count) => {
         label.htmlFor = checkbox.id;
         label.textContent = `Чекбокс ${i}`;
 
-        li.appendChild(checkbox);
-        li.appendChild(label);
-        ul.appendChild(li);
+        div.appendChild(checkbox);
+        div.appendChild(label);
+        CHECKBOX_LIST.appendChild(div);
     }
-    CHECKBOX_LIST.appendChild(ul);
 };
 createCheckboxes(50);
 
