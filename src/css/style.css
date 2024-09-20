@@ -35,6 +35,10 @@ body {
     margin: 5px;
 }
 
+.checkbox-wrapper label {
+    cursor: pointer;
+}
+
 .checkbox-wrapper input {
     margin-right: 5px;
     cursor: pointer;
