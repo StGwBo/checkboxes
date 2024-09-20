@@ -117,5 +117,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateUrlDidMount();
 });
-
-export { createCheckboxes, handleCheckbox };
