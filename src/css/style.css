@@ -1,0 +1,98 @@
+@import "./reset.css";
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border-radius: 8px;
+}
+
+.container-checkbox {
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.checkbox-wrapper {
+    display: inline-flex;
+    width: 150px;
+    align-items: center;
+    margin: 5px;
+}
+
+.checkbox-wrapper input {
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.checkbox-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #f9f9f9;
+    min-height: 200px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.checkbox-info_up {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.checkbox-info__title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.checkbox-info__ids {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-height: 320px;
+}
+
+.checkbox-info__ids li {
+    width: 150px;
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd;
+    color: #555;
+    cursor: pointer;
+}
+
+.buttons {
+    display: flex;
+}
+
+.button {
+    width: 150px;
+    height: 50px;
+    font-size: 16px;
+    background-color: #6940a5;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.button:hover {
+    background-color: #51327f;
+}

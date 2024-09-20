@@ -1,13 +1,42 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="./src/css/style.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Checkbox Task</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="container-checkbox" id="checkbox-list"></div>
+            <div class="info-section">
+                <div class="checkbox-info">
+                    <div class="checkbox-info_up">
+                        <div class="checkbox-info__title">Порядок в котором были нажаты чекбоксы:</div>
+                        <div class="buttons">
+                            <button id="copy-url-button" class="button">Скопировать ссылку</button>
+                            <button id="reset-button" class="button">Всё сбросить</button>
+                        </div>
+                    </div>
+
+                    <ul class="checkbox-info__ids" id="selected-ids"></ul>
+                </div>
+                <script type="module" src="./src/js/main.js"></script>
+            </div>
+        </div>
+    </body>
 </html>
+
+<!-- <!doctype html>
+          <html lang="en">
+            <head>
+              <meta charset="UTF-8" />
+              <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+              <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+              <title>Vite + React + TS</title>
+            </head>
+            <body>
+              <div id="root"></div>
+              <script type="module" src="/src/main.tsx"></script>
+            </body>
+          </html> -->
