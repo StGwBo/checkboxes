@@ -1,6 +1,6 @@
-import { checkboxes, EMPTY_STRING } from "../constants/constants";
-import { handleCheckbox } from "./handlers";
-import { getSelectedIds } from "./selectedIds";
+import { EMPTY_STRING } from "../../constants/constants";
+import { handleCheckbox } from "../handlers/handlers";
+import { getSelectedIds } from "../selectedIds/selectedIds";
 
 const createCheckboxes = (count, container) => {
     for (let i = 1; i <= count; i++) {
@@ -25,12 +25,6 @@ const createCheckboxes = (count, container) => {
     }
 };
 
-const updateCheckboxesStates = (checkboxes) => {
-    checkboxes.forEach((checkbox) => {
-        checkbox.checked = getSelectedIds().includes(checkbox.value);
-    });
-};
-
 const updateSelectedIds = (container) => {
     container.innerHTML = EMPTY_STRING;
     const selectedIds = getSelectedIds();
@@ -47,4 +41,9 @@ const createSelectedIds = (container, ids) => {
     });
 };
 
-export { createCheckboxes, updateCheckboxesStates, updateSelectedIds };
+const updateCheckboxesStates = (checkboxes) => {
+    checkboxes.forEach((checkbox) => {
+        checkbox.checked = getSelectedIds().includes(checkbox.value);
+    });
+};
+export { createCheckboxes, updateCheckboxesStates, updateSelectedIds, createSelectedIds };

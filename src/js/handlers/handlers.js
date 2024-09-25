@@ -1,7 +1,7 @@
-import { checkboxes, selectedIds } from "../constants/constants";
-import { addSelectedId, removeSelectedId, resetSelectedIds } from "./selectedIds";
-import { updateCheckboxesStates, updateSelectedIds } from "./ui";
-import { updateUrlParams } from "./utils";
+import { checkboxes, selectedIds } from "../../constants/constants";
+import { removeSelectedId, resetSelectedIds } from "../selectedIds/selectedIds";
+import { updateCheckboxesStates, updateSelectedIds } from "../ui/ui";
+import { toggleSelectedId, updateUrlParams } from "../utils/utils";
 
 const handleResetCheckboxes = () => {
     resetSelectedIds();
@@ -29,12 +29,7 @@ const handleCheckbox = (event) => {
     const checkbox = event.target;
     const id = checkbox.value;
 
-    if (checkbox.checked) {
-        addSelectedId(id);
-    } else {
-        removeSelectedId(id);
-    }
-
+    toggleSelectedId(checkbox, id);
     updateSelectedIds(selectedIds);
     updateUrlParams();
 };
