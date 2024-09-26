@@ -6,9 +6,7 @@ import { handleResetCheckboxes, handleCopyUrl, handleDeleteIds, handleCheckbox }
 
 jest.mock("../selectedIds/selectedIds", () => ({
     resetSelectedIds: jest.fn(),
-    addSelectedId: jest.fn(),
     removeSelectedId: jest.fn(),
-    getSelectedIds: jest.fn(),
 }));
 
 jest.mock("../ui/ui", () => ({
@@ -24,14 +22,13 @@ jest.mock("../utils/utils", () => ({
 describe("handlers functions", () => {
     let selectedIds;
 
-    beforeEach(() => {
+    beforeAll(() => {
         selectedIds = document.querySelector(".checkbox-info__ids");
 
         global.navigator.clipboard = {
             writeText: jest.fn(),
         };
 
-        getSelectedIds.mockClear();
         jest.clearAllMocks();
     });
 

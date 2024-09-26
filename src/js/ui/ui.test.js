@@ -14,9 +14,6 @@ describe("ui functions", () => {
         container = document.createElement("div");
         document.body.appendChild(container);
 
-        checkboxes = container.querySelectorAll(".checkbox-input");
-        items = container.querySelectorAll(".list_li");
-
         getSelectedIds.mockClear();
     });
 
