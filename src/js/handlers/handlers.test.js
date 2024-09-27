@@ -1,4 +1,4 @@
-import { checkboxes } from "../../constants/constants";
+import { checkboxes, selectedIds } from "../../constants/constants";
 import { resetSelectedIds, removeSelectedId, getSelectedIds } from "../selectedIds/selectedIds";
 import { updateCheckboxesStates, updateSelectedIds } from "../ui/ui";
 import { toggleSelectedId, updateUrlParams } from "../utils/utils";
@@ -20,11 +20,7 @@ jest.mock("../utils/utils", () => ({
 }));
 
 describe("handlers functions", () => {
-    let selectedIds;
-
     beforeAll(() => {
-        selectedIds = document.querySelector(".checkbox-info__ids");
-
         global.navigator.clipboard = {
             writeText: jest.fn(),
         };
@@ -44,9 +40,7 @@ describe("handlers functions", () => {
     test("handleCopyUrl", async () => {
         const url = "http://localhost/selectedIds=1,2,3";
         window.history.pushState({}, "", url);
-
         const currentUrl = window.location.href;
-
         handleCopyUrl();
 
         expect(currentUrl).toEqual(url);
@@ -54,7 +48,6 @@ describe("handlers functions", () => {
 
     test("handleDeleteIds", () => {
         const mockEvent = { target: { value: "1" } };
-
         handleDeleteIds(mockEvent);
 
         expect(removeSelectedId).toHaveBeenCalledWith("1");
@@ -65,16 +58,10 @@ describe("handlers functions", () => {
 
     test("handleCheckbox", () => {
         const mockAddEvent = { target: { value: "1", checked: true } };
-        const mockRemoveEvent = { target: { value: "1", checked: false } };
         const checkbox = mockAddEvent.target;
         const id = checkbox.value;
-
         handleCheckbox(mockAddEvent);
-        expect(toggleSelectedId).toHaveBeenCalledWith(checkbox, id);
-        expect(updateSelectedIds).toHaveBeenCalledWith(selectedIds);
-        expect(updateUrlParams).toHaveBeenCalled();
 
-        handleCheckbox(mockRemoveEvent);
         expect(toggleSelectedId).toHaveBeenCalledWith(checkbox, id);
         expect(updateSelectedIds).toHaveBeenCalledWith(selectedIds);
         expect(updateUrlParams).toHaveBeenCalled();

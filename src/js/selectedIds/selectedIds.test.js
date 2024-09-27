@@ -12,6 +12,7 @@ describe("selectedIds functions", () => {
     test("addSelectedId", () => {
         addSelectedId("1");
         addSelectedId("2");
+        
         expect(getSelectedIds()).toEqual(["1", "2"]);
     });
 
@@ -19,6 +20,7 @@ describe("selectedIds functions", () => {
         addSelectedId("1");
         addSelectedId("2");
         removeSelectedId("3");
+
         expect(getSelectedIds()).toEqual(["1", "2"]);
     });
 
@@ -26,6 +28,7 @@ describe("selectedIds functions", () => {
         addSelectedId("1");
         addSelectedId("2");
         resetSelectedIds();
+
         expect(getSelectedIds()).toEqual([]);
     });
 });

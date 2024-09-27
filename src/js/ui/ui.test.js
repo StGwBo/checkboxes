@@ -33,9 +33,7 @@ describe("ui functions", () => {
         const checkboxCount = 3;
         createCheckboxes(checkboxCount, container);
         checkboxes = container.querySelectorAll(".checkbox-input");
-
         getSelectedIds.mockReturnValue(["1", "3"]);
-
         updateCheckboxesStates(checkboxes);
 
         expect(checkboxes[0].checked).toBe(true);
@@ -45,10 +43,9 @@ describe("ui functions", () => {
 
     test("updateSelectedIds", () => {
         getSelectedIds.mockReturnValue(["1", "2"]);
-
         updateSelectedIds(container);
-
         items = container.querySelectorAll(".list_li");
+        
         expect(items.length).toBe(2);
         expect(items[0].textContent).toBe("1) 1");
         expect(items[1].textContent).toBe("2) 2");

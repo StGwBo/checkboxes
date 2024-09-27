@@ -52,16 +52,19 @@ describe("main", () => {
 
     test("clicked handleDeleteIds", () => {
         selectedIds.click();
+        
         expect(handleDeleteIds).toHaveBeenCalled();
     });
 
     test("clicked handleCopyUrl", () => {
         copyUrlButton.click();
+
         expect(handleCopyUrl).toHaveBeenCalled();
     });
 
     test("clicked handleResetCheckboxes", () => {
         resetButton.click();
+
         expect(handleResetCheckboxes).toHaveBeenCalled();
     });
 });

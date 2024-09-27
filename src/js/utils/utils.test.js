@@ -19,17 +19,15 @@ describe("utils functions", () => {
 
     test("updateUrlParams", () => {
         getSelectedIds.mockReturnValue(["1", "2", "3"]);
-
         updateUrlParams();
-
         const url = new URL(window.location);
+
         expect(url.searchParams.get("selectedIds")).toBe("1,2,3");
         expect(url.searchParams.get("selectedIds")).not.toBe(1, 2, 3);
     });
 
     test("initializeFromUrl", () => {
         window.history.pushState({}, "", "http://localhost?selectedIds=1,2,3");
-
         initializeFromUrl();
 
         expect(getSelectedIds()).toEqual(["1", "2", "3"]);
