@@ -33,7 +33,7 @@ describe("utils functions", () => {
         initializeFromUrl();
 
         expect(getSelectedIds()).toEqual(["1", "2", "3"]);
-        expect(getSelectedIds()).not.toEqual(["1", "9", "3"]);
+        expect(getSelectedIds()).not.toEqual([1, 2, 3]);
     });
     test("processSelectedIds", () => {
         processSelectedIds("1", "2", "3");
