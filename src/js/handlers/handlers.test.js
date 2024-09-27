@@ -43,7 +43,7 @@ describe("handlers functions", () => {
         const currentUrl = window.location.href;
         handleCopyUrl();
 
-        expect(currentUrl).toEqual(url);
+        expect(currentUrl).toBe(url);
     });
 
     test("handleDeleteIds", () => {
