@@ -41,7 +41,7 @@ const createSelectedIds = (container, ids) => {
     });
 };
 
-const updateCheckboxesStates = (checkboxes) => {
+const   updateCheckboxesStates = (checkboxes) => {
     checkboxes.forEach((checkbox) => {
         checkbox.checked = getSelectedIds().includes(checkbox.value);
     });

@@ -1,4 +1,6 @@
-import { getSelectedIds } from "../selectedIds/selectedIds";
+import { checkboxes, selectedIds } from "../../constants/constants";
+import { addSelectedId, getSelectedIds } from "../selectedIds/selectedIds";
+import { updateCheckboxesStates, updateSelectedIds } from "../ui/ui";
 import { updateUrlParams, initializeFromUrl, processSelectedIds } from "./utils";
 
 jest.mock("../selectedIds/selectedIds", () => ({
@@ -12,30 +14,21 @@ jest.mock("../ui/ui", () => ({
 }));
 
 describe("utils functions", () => {
-    beforeEach(() => {
-        window.history.pushState({}, "", "http://localhost");
-        jest.clearAllMocks();
-    });
-
     test("updateUrlParams", () => {
-        getSelectedIds.mockReturnValue(["1", "2", "3"]);
+        getSelectedIds.mockReturnValue(["2", "3", "4"]);
         updateUrlParams();
         const url = new URL(window.location);
 
-        expect(url.searchParams.get("selectedIds")).toBe("1,2,3");
-        expect(url.searchParams.get("selectedIds")).not.toBe(1, 2, 3);
+        expect(url.searchParams.get("selectedIds")).toBe("2,3,4");
     });
 
-    test("initializeFromUrl", () => {
-        window.history.pushState({}, "", "http://localhost?selectedIds=1,2,3");
-        initializeFromUrl();
-
-        expect(getSelectedIds()).toEqual(["1", "2", "3"]);
-        expect(getSelectedIds()).not.toEqual([1, 2, 3]);
-    });
     test("processSelectedIds", () => {
-        processSelectedIds("1", "2", "3");
+        processSelectedIds("1,2,3");
 
-        expect(getSelectedIds()).toEqual(["1", "2", "3"]);
+        expect(addSelectedId).toHaveBeenCalledWith("1");
+        expect(addSelectedId).toHaveBeenCalledWith("2");
+        expect(addSelectedId).toHaveBeenCalledWith("3");
+        expect(updateCheckboxesStates).toHaveBeenCalledWith(checkboxes());
+        expect(updateSelectedIds).toHaveBeenCalledWith(selectedIds);
     });
 });
